@@ -24,66 +24,65 @@
                     <tr>
                         <td>
                             <form onsubmit="alertMe(); return false;">
-                                <label for="name">Name: </label>
-                                <input type="text" id="name" name="name" required><br><br>
+                                <label for="name1">Name: </label>
+                                <input type="text" id="name1" name="name1" required><br><br>
                                 <button for="submit">Alert Me!</label>
                             </form>
-                            <script type="text/javascript">
-                                function alertMe() {
-                                    const name = document.getElementById('name').value;
-                                    alert('Hi ' + name + '!');
-                                }
-                            </script>
                         </td>
 
                         <td>
                             <button onclick="changeColor()" for="submit">Change Color</label>
-                                <script type="text/javascript">
-                                    function changeColor() {
-                                        const body = document.body;
-                                        if (body.style.backgroundColor == 'lightblue') {
-                                            body.style.backgroundColor = 'limegreen';
-                                        }
-                                        else {
-                                            body.style.backgroundColor = 'lightblue';
-                                        }
-                                    }
-                                </script>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
                             <form onsubmit="validate(); return false;">
-                                <label for="name">Text Tester: </label>
-                                <input type="text" id="name" name="name" required><br><br>
+                                <label for="name2">Text Tester: </label>
+                                <input type="text" id="name2" name="name2" required><br><br>
                                 <button onclick="validate(); return false">Validate Text</button>                               
                             </form>
-                            <script type="text/javascript">
-                                function validate() {
-                                    const text = document.getElementById('name').value;
-                                    var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-
-                                    if (validation.test(text)) {
-                                        alert('Special characters are not allowed.');
-                                    } else {
-                                        alert('Valid');
-                                    }
-                                }
-                            </script> 
                         </td>
 
                         <td>
                             <button onclick="addText()">Add Text</label>
-                                <script type="text/javascript">
-                                    function addText() {
-                                        const heading = document.getElementById('heading');
-                                        heading.textContent += ' Add Text';
-                                    }
-                                </script>
                         </td>
                     </tr>
                 </table>
 
+                <script type="text/javascript">
+
+                    function alertMe() {
+                        const name = document.getElementById('name1').value;
+                        alert('Hi ' + name + '!');
+                    }
+
+                    function changeColor() {
+                        const body = document.body;
+                        if (body.style.backgroundColor == 'lightblue') {
+                            body.style.backgroundColor = 'limegreen';
+                        }
+                        else {
+                            body.style.backgroundColor = 'lightblue';
+                        }
+                    }
+
+                    function validate() {
+                        const text = document.getElementById('name2').value;
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                        if (validation.test(text)) {
+                            alert('Special characters are not allowed.');
+                        } else {
+                            alert('Valid');
+                        }
+                    }
+
+                    function addText() {
+                        const heading = document.getElementById('heading');
+                        heading.textContent += ' Add Text';
+                    }
+
+                </script>
         </body>
 </html>
